@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+}
+
+#game-content{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+
+.buttons{
+    margin: 75px;
+    display: flex;
+    gap: 100px;
+}
+
+.buttons > button {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    border-color: white;
+    border-radius: 10px;
+    cursor: grabbing;
+}
