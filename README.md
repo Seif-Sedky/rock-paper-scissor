@@ -5,7 +5,7 @@ A simple Rock Paper Scissors game built with HTML, CSS, and JavaScript. Click th
 ---
 
 ## Features
-
+- Event delegation for enhanced performance
 - User selects rock, paper, or scissors by clicking buttons.
 - Computer choice is random.
 - Displays round results (win, lose, draw).
