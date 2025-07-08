@@ -46,16 +46,16 @@ function playRound(humanChoice, computerChoice) {
             win = true;
         }
         if (win) {
-            roundDescriber.textContent = `You win! ${humanChoice} beats ${computerChoice}.`
+            roundDescriber.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
             humanScore++;
         }
         else {
             roundDescriber.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
             computerScore++;
-
         }
+
     }
-    score.textContent = `Current score: User = ${humanScore} Computer = ${computerScore}`;
+    score.textContent = `Current score: User = ${humanScore} | Computer = ${computerScore}`;
 
     if (Math.abs(humanScore - computerScore) >= 3 || humanScore + computerScore >= 5) {
 
