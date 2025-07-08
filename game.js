@@ -31,6 +31,7 @@ function getHumanChoice(e) {
 
 
 function playRound(humanChoice, computerChoice) {
+    winner.textContent="";
     humanChoice = humanChoice.toLowerCase();
     let win = false;
     if (humanChoice === computerChoice) {
