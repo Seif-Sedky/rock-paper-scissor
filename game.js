@@ -1,3 +1,4 @@
+let turns=0;
 const buttonsContainer = document.querySelector(".buttons");
 buttonsContainer.addEventListener("click", (e) => {
     playRound(getHumanChoice(e), getComputerChoice())
@@ -56,14 +57,15 @@ function playRound(humanChoice, computerChoice) {
 
     }
     score.textContent = `Current score: User = ${humanScore} | Computer = ${computerScore}`;
+    turns++;
+    if (turns==5) {
 
-    if (Math.abs(humanScore - computerScore) >= 3 || humanScore + computerScore >= 5) {
 
-
-        let winnerString = (computerScore > humanScore) ? " The computer" : " The user";
-        winner.textContent = "The game has ended." + winnerString + " has won with a score of "+humanScore+" - "+computerScore;
+        let winnerString = (computerScore > humanScore) ? " The computer has won " : (computerScore < humanScore) ? " The user has won" : " It's a draw ";
+        winner.textContent = "The game has ended." + winnerString + "with a score of "+humanScore+" - "+computerScore;
         humanScore = 0;
         computerScore = 0;
+        turns=0;
         score.textContent = `Current score: User = 0 Computer = 0`;
 
 
