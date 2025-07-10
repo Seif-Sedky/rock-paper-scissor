@@ -1,7 +1,8 @@
-let turns=0;
+let turns = 0;
 const buttonsContainer = document.querySelector(".buttons");
 buttonsContainer.addEventListener("click", (e) => {
-    playRound(getHumanChoice(e), getComputerChoice())
+    if (e.target.id) 
+        playRound(getHumanChoice(e), getComputerChoice())
 });
 
 const roundDescriber = document.querySelector("#round-decription");
@@ -23,7 +24,7 @@ function getComputerChoice() {
     else if (n == 1) {
         return 'paper';
     }
-    else return 'scissors';
+    else return 'scissor';
 }
 
 function getHumanChoice(e) {
@@ -32,9 +33,9 @@ function getHumanChoice(e) {
 
 
 function playRound(humanChoice, computerChoice) {
-    winner.textContent="";
-    humanChoice = humanChoice.toLowerCase();
+    winner.textContent = "";
     let win = false;
+
     if (humanChoice === computerChoice) {
         roundDescriber.textContent = `It's a draw! You both chose ${humanChoice}.`;
         humanScore++;
@@ -43,7 +44,7 @@ function playRound(humanChoice, computerChoice) {
 
 
     else {
-        if (humanChoice === "scissors" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "rock" && computerChoice === "scissors") {
+        if (humanChoice === "scissor" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "rock" && computerChoice === "scissor") {
             win = true;
         }
         if (win) {
@@ -58,14 +59,14 @@ function playRound(humanChoice, computerChoice) {
     }
     score.textContent = `Current score: User = ${humanScore} | Computer = ${computerScore}`;
     turns++;
-    if (turns==5) {
+    if (turns == 5) {
 
 
-        let winnerString = (computerScore > humanScore) ? " The computer has won " : (computerScore < humanScore) ? " The user has won" : " It's a draw ";
-        winner.textContent = "The game has ended." + winnerString + "with a score of "+humanScore+" - "+computerScore;
+        let winnerString = (computerScore > humanScore) ? " The computer has won " : (computerScore < humanScore) ? " The user has won " : " It's a draw ";
+        winner.textContent = "The game has ended." + winnerString + "with a score of " + humanScore + " - " + computerScore;
         humanScore = 0;
         computerScore = 0;
-        turns=0;
+        turns = 0;
         score.textContent = `Current score: User = 0 Computer = 0`;
 
 
